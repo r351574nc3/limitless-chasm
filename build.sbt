@@ -1,14 +1,14 @@
-import NativePackagerKeys._
+name := """limitless-chasm"""
 
-packageArchetype.java_application
+version := "1.0-SNAPSHOT"
 
-name := """scala-getting-started"""
+lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-version := "1.0"
+scalaVersion := "2.11.1"
 
-scalaVersion := "2.10.4"
-  
 libraryDependencies ++= Seq(
-  "com.twitter" % "finagle-http_2.10" % "6.18.0",
-  "postgresql" % "postgresql" % "9.0-801.jdbc4"
+  jdbc,
+  anorm,
+  cache,
+  ws
 )
